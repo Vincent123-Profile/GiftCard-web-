@@ -402,6 +402,89 @@ header .container {
     font-size: 0.8rem;
   }
 }
+
+.container-fluid {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* services */
+.services {
+    background: var(--mainColor);
+    padding: 80px 0;
+    background-color: #5bacdf;
+}
+
+.section_title h3 {
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.section_title span {
+    display: block;
+    text-align: center;
+    color: var(--text-color3);
+    font-size: 25px;
+}
+
+.service_boxs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.service_box {
+    margin: 30px 20px;
+    border: 2px solid var(--text-color3);
+    border-radius: 8px;
+    padding: 20px 30px;
+    background: var(--text-color2);
+    transition: all .5s;
+}
+
+.service_box:hover {
+    transform: translateY(-11px);
+    cursor: pointer;
+}
+
+.service_icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--text-color3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto 10px;
+}
+
+.service_icon i {
+    font-size: 35px;
+    color: var(--text-color);
+}
+
+.service_title {
+    font-size: 22px;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.service_disc p {
+    color: var(--text-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .service_boxs {
+        flex-direction: column;
+    }
+}
+/* services */
+
     </style>
     <main>
       <div class="big-wrapper light">
@@ -463,6 +546,49 @@ header .container {
         </div>
       </div>
     </main>
+
+    <div class="container-fluid services" id="services">
+      <div class="container services_content">
+          <div class="section_title">
+              <span>Services</span>
+              <h3>What we do</h3>
+          </div>
+          <div class="service_boxs">
+              <div class="service_box" data-aos="fade-down">
+                  <div class="service_icon">
+                      <i><img src="icons8-sell-48.png"></i>
+                  </div>
+                  <div class="service_title">Sell GiftCards</div>
+                  <div class="service_disc">
+                      <p>
+                        Exchange unused gift cards in Nigeria at amazing rates.
+                      </p>
+                  </div>
+              </div>
+              <div class="service_box" data-aos="fade-down">
+                  <div class="service_icon">
+                      <i><img src="icons8-buy-48.png"></i>
+                  </div>
+                  <div class="service_title">Buy GiftCards</div>
+                  <div class="service_disc">
+                      <p>
+                        Buy from 14,000+ local and international gift cards.
+                      </p>
+                  </div>
+              </div>
+              <div class="service_box" data-aos="fade-down">
+                  <div class="service_icon">
+                      <i><img src="icons8-rate-48.png"></i>
+                  </div>
+                  <div class="service_title">GiftCards Rate</div>
+                  <div class="service_disc">
+                      <p>
+                        Discover the best rates for selling your gift card
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
     <!-- JavaScript Files -->
 
