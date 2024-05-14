@@ -626,8 +626,100 @@ header .container {
             order: 2; /* Content moves below the image */
         }
     }
-/* services */
 
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+  }
+
+  th, td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: white;
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  td {
+    padding-bottom: 30px;
+  }
+
+ 
+
+
+  /* Plus sign style */
+  .plus-sign {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none; /* Hide plus sign by default */
+  }
+
+  /* Media query for smaller screens */
+  @media screen and (max-width: 600px) {
+    th {
+      display: block;
+      padding-bottom: 10px; /* Adjust as needed */
+    }
+
+    td {
+      display: block; /* Hide td on mobile screens */
+    }
+
+    /* Hide table row border on smaller screens */
+    tr {
+      border-bottom: none;
+    }
+
+    /* Show plus sign on th */
+    .toggle-header .plus-sign {
+      display: block;
+    }
+
+    /* Show/hide content based on the 'show' class */
+    .toggle-content {
+      display: none;
+    }
+
+    .toggle-content.show {
+      display: block; /* Show as table row for proper alignment */
+    }
+  }
+
+  .footer {
+      background-color: #ccc;
+      color: black;
+      padding: 20px;
+      text-align: center;
+      height: 100px;
+    }
+
+    .footer p {
+      padding-top: 20px;
+    }
+    
+    /* Media Query for Smaller Screens */
+    @media (max-width: 768px) {
+      .footer {
+        background-color:  rgba(237, 230, 230, 0.801);
+        padding: 15px;
+      }
+    }
+    
+    /* Media Query for Larger Screens */
+    @media (min-width: 1200px) {
+      .footer {
+        background-color: #ccc;
+        padding: 30px;
+      }
+    }
     </style>
     <main>
       <div class="big-wrapper light">
@@ -789,9 +881,67 @@ header .container {
           <h2>VeeExchange</h2>
           <p>Experience the best platform to reedem your GiftCards at high rate</p>
           <a href="#" class="buttons">Trade Now</a>
-          <a href="#" class="button">Get Started</a>
+          <a href="signin.html" class="button">Get Started</a>
       </div>
   </div>
+
+  <table>
+    <tr>
+      <th class="toggle-header">Products<span class="plus-sign">+</span></th>
+      <th class="toggle-header">Available Gift Cards<span class="plus-sign">+</span></th>
+      <th class="toggle-header">Resources<span class="plus-sign">+</span></th>
+      <th class="toggle-header">Company<span class="plus-sign">+</span></th>
+      <th class="toggle-header">Connect<span class="plus-sign">+</span></th>
+    </tr>
+    <tr>
+      <td class="toggle-content">Buy Gift Cards</td>
+      <td class="toggle-content">Travel Gift Cards</td>
+      <td class="toggle-content">Blog</td>
+      <td class="toggle-content">Partners</td>
+      <td class="toggle-content">Get In Touch</td>
+    </tr>
+    <tr>
+      <td class="toggle-content">Sell Gift Card</td>
+      <td class="toggle-content">Lifestyle Gift Cards</td>
+      <td class="toggle-content">Rewards</td>
+      <td class="toggle-content">#CTGivesBack</td>
+      <td class="toggle-content">support@VeeExchange.com</td>
+    </tr>
+    <tr>
+      <td class="toggle-content">Just gadgets</td>
+      <td class="toggle-content">Music Gift Cards</td>
+      <td class="toggle-content">Gift Crads Rate</td>
+      <td class="toggle-content">Upskill</td>
+      <td class="toggle-content">+234 (0) 8025542732</td>
+    </tr>
+    <tr>
+      <td class="toggle-content">Dollar Crad</td>
+      <td class="toggle-content">Supermarket Gift Cards</td>
+      <td class="toggle-content">Developer Api</td>
+      <td class="toggle-content">Privacy Policy</td>
+      <td class="toggle-content">+234 (0) 8025542732</td>
+    </tr>
+    <tr>
+      <td class="toggle-content">Bill Payment</td>
+      <td class="toggle-content">Gaming Gift Card</td>
+      <td class="toggle-content">Help Center</td>
+      <td class="toggle-content">Terms of us </td>
+      <td class="toggle-content"></td>
+    </tr>
+    <tr>
+      <td class="toggle-content">Bank Account</td>
+      <td class="toggle-content">Streaming Gift Cards</td>
+      <td class="toggle-content">Ghanaians</td>
+      <td class="toggle-content">Partners</td>
+      <td class="toggle-content"></td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+  
+
+  <footer class="footer">
+    <p>&copy; 2024 VeeExchange. All rights reserved.</p>
+  </footer>
 
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
    <script>
@@ -866,6 +1016,23 @@ const containers = document.querySelector('.containers');
     }
 
     setInterval(slideItems, 5000); // Adjust slide interval (milliseconds
+    
+    document.addEventListener("DOMContentLoaded", function() {
+  // Add click event listener to toggle button
+  var toggleButtons = document.querySelectorAll('.toggle-header');
+  toggleButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      // Find the next sibling element (which is the first <td>)
+      var content = this.nextElementSibling;
+      // Toggle the 'show' class on the content element
+      content.classList.toggle('show');
+      // Toggle the plus/minus sign on the toggle button
+      var icon = this.querySelector('.toggle-icon');
+      icon.textContent = icon.textContent === '+' ? '-' : '+';
+    });
+  });
+});
+
    </script>
   </body>
 </html>
