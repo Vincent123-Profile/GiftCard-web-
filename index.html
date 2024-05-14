@@ -485,25 +485,28 @@ header .container {
 }
 
 .containers {
-        width: 120%;
-        margin: 0 auto;
-        overflow: hidden;
-        background-image: url(shape.png);
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+        background-color: white;
     }
     .slider {
-        display: flex;
+        display: inline-flex;
+        scroll-behavior: smooth;
     }
     .item {
-        flex: 0 0 400px; /* Adjust width of each item */
-        padding: 20px;
+      width: auto;
+        padding: 20px 10px; /* Reduced padding */
+        scroll-snap-align: start;
         box-sizing: border-box;
-        transition: transform 0.5s ease;
     }
     .testimonial-container, .news-container {
-        width: 100%;
-        height: 170px; /* Adjust as needed */
-        background: var(--mainColor);
-        border: 1px solid white;
+      width: auto;
+        max-width: ; /* Limit width to prevent over-expansion */
+        background: #5bacdf;
+        border: 5px solid #5bacdf;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -521,8 +524,18 @@ header .container {
         margin-bottom: 10px;
     }
     .testimonial-text, .news-text {
-        text-align: center;
+      text-align: center;
+        padding: 0 10px; /* Add padding to prevent text from touching the edges */
     }
+
+  
+
+    @media only screen and (min-width: 480px) {
+      .item {
+        flex: auto;
+      }
+    }
+
 /* services */
 
     </style>
@@ -653,6 +666,20 @@ header .container {
                 <p class="testimonial-text">"The withdrawal was quicker than i expected. Keep it up Guys."</p>
             </div>
         </div>
+        <div class="item">
+          <div class="testimonial-container">
+              <div class="user-name">Ramon</div>
+              <img class="testimonial-logo" src="icons8-testimonial-64.png" alt="Testimonial Logo">
+              <p class="testimonial-text">"The withdrawal was quicker than i expected. Keep it up Guys."</p>
+          </div>
+      </div>
+      <div class="item">
+        <div class="testimonial-container">
+            <div class="user-name">Convenant</div>
+            <img class="testimonial-logo" src="icons8-testimonial-64.png" alt="Testimonial Logo">
+            <p class="testimonial-text">"The withdrawal was quicker than i expected. Keep it up Guys."</p>
+        </div>
+    </div>
         <!-- Add more testimonials as needed -->
     </div>
     <!-- JavaScript Files -->
@@ -710,21 +737,26 @@ function events() {
 
 events();
 
+const containers = document.querySelector('.containers');
+    let isScrolling = false;
 
-const slider = document.querySelector('.slider');
-    const items = document.querySelectorAll('.item');
-    let index = 0;
-
-    function slideItems() {
-        index++;
-        if (index === items.length) {
-            index = 0;
-        }
-        const translateXValue = -index * 400; // Adjust based on item width
-        slider.style.transform = `translateX(${translateXValue}px)`;
+    function handleScroll() {
+        isScrolling = true;
+        setTimeout(function() {
+            isScrolling = false;
+        }, 100);
     }
 
-    setInterval(slideItems, 5000); // Adjust slide interval (milliseconds)
+    function slideItems() {
+        if (!isScrolling) {
+            containers.scrollLeft += containers.clientWidth;
+            if (containers.scrollLeft >= containers.scrollWidth - containers.clientWidth) {
+                containers.scrollLeft = 0;
+            }
+        }
+    }
+
+    setInterval(slideItems, 5000); // Adjust slide interval (milliseconds
    </script>
   </body>
 </html>
