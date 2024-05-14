@@ -56,6 +56,7 @@ a {
   text-decoration: none;
 }
 
+
 .big-wrapper {
   position: relative;
   padding: 1.7rem 0 2rem;
@@ -408,6 +409,26 @@ header .container {
     overflow: hidden;
 }
 
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Limit maximum width */
+  margin: 30px auto; /* Center horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* Set fixed height for the container */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+
+
 /* services */
 .services {
     background: var(--mainColor);
@@ -498,15 +519,15 @@ header .container {
     }
     .item {
       width: auto;
-        padding: 20px 10px; /* Reduced padding */
+        padding: 10px 1px; /* Reduced padding */
         scroll-snap-align: start;
         box-sizing: border-box;
     }
     .testimonial-container, .news-container {
       width: auto;
         max-width: ; /* Limit width to prevent over-expansion */
-        background: #5bacdf;
-        border: 5px solid #5bacdf;
+        background: white;
+        border: 5px solid  white;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -536,6 +557,73 @@ header .container {
       }
     }
 
+  
+
+    .containerss {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgba(237, 230, 230, 0.801);
+    }
+
+    .image {
+        flex: 1;
+        order: 1; /* By default, the image is on the left */
+        max-width: 50%; /* Image takes up half of the screen on larger screens */
+    }
+
+    .content {
+        flex: 1;
+        order: 2; /* By default, the content is on the right */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+    }
+
+    .button {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 15px 30px; /* Larger padding */
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px; /* Larger border radius */
+        font-size: 18px; /* Larger font size */
+        transition: background-color 0.3s;
+    }
+
+    .buttons {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 15px 30px; /* Larger padding */
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        border-radius: 8px; /* Larger border radius */
+        font-size: 18px; /* Larger font size */
+        transition: background-color 0.3s;
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Darker color on hover */
+    }
+
+    /* Media query for mobile screens */
+    @media screen and (max-width: 768px) {
+        .containerss {
+            flex-direction: column; /* Stack elements vertically */
+        }
+
+        .image {
+            order: 1; /* Image moves to the top */
+            max-width: 100%; /* Image takes up full width on mobile */
+        }
+
+        .content {
+            order: 2; /* Content moves below the image */
+        }
+    }
 /* services */
 
     </style>
@@ -568,6 +656,10 @@ header .container {
           </div>
         </header>
 
+        <div class="video-container">
+          <iframe width="1200" height="600" src="https://www.youtube.com/embed/OtLB2-Qm6KA" title="Dive into the Cardtonic Experience with Seyi Vibez!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
         <div class="showcase-area">
           <div class="container">
             <div class="left">
@@ -599,6 +691,7 @@ header .container {
         </div>
       </div>
     </main>
+  
 
     <div class="container-fluid services" id="services">
       <div class="container services_content">
@@ -643,6 +736,7 @@ header .container {
       </div>
   </div>
 
+
   <div class="containers">
     <div class="slider">
         <div class="item">
@@ -682,7 +776,20 @@ header .container {
     </div>
         <!-- Add more testimonials as needed -->
     </div>
-    <!-- JavaScript Files -->
+    </div>
+
+    
+    <div class="containerss">
+      <div class="image">
+          <img src="gift.webp" alt="Your Image">
+      </div>
+      <div class="content">
+          <h2>VeeExchange</h2>
+          <p>Experience the best platform to reedem your GiftCards at high rate</p>
+          <a href="#" class="buttons">Trade Now</a>
+          <a href="#" class="button">Get Started</a>
+      </div>
+  </div>
 
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
    <script>
