@@ -1,5 +1,3 @@
-// signup.js
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDx9Q0iWX-EQpyLOA2n5OC2ia4NHT4VcHM",
@@ -16,7 +14,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const signUpForm = document.querySelector('form');
+    const signUpForm = document.getElementById('signUpForm');
     signUpForm.addEventListener('submit', (event) => {
         event.preventDefault();
         
