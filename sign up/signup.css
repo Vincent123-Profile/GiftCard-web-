@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Registration Form</title>
-    <link rel="stylesheet" href="signin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600;700&display=swap");
 
         * {
             padding: 0;
@@ -88,26 +79,3 @@
             background-color: transparent;
             border-color: #fff;
         }
-    </style>
-</head>
-<body>
-    <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form>
-                <h1>Create Account</h1>
-                <div class="social_icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <span>Or use your email for registration</span>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button type="button">Sign Up</button>
-            </form>
-        </div>
-    </div>
-</body>
-</html>
