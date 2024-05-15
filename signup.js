@@ -4,6 +4,7 @@
 const firebaseConfig = {
     apiKey: "AIzaSyDx9Q0iWX-EQpyLOA2n5OC2ia4NHT4VcHM",
     authDomain: "veexchage-p2.firebaseapp.com",
+    databaseURL: "https://veexchage-p2-default-rtdb.firebaseio.com", // Add your database URL
     projectId: "veexchage-p2",
     storageBucket: "veexchage-p2.appspot.com",
     messagingSenderId: "103489803359",
