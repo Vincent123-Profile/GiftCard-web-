@@ -31,7 +31,7 @@ const firebaseConfig = {
         console.log("Sign-in successful. Sending email...");
   
         // Redirect to the dashboard
-        window.location.href = "index.html";
+        window.location.href = "C:\Users\HP\Documents\Gift landing\Dashboard\Responsive Admin Dashboard - final";
       })
       .catch((error) => {
         console.error("Error signing in:", error);
