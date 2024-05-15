@@ -1,10 +1,8 @@
-// signup.js
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDx9Q0iWX-EQpyLOA2n5OC2ia4NHT4VcHM",
     authDomain: "veexchange-p2.firebaseapp.com",
-    databaseURL: "https://veexchange-p2-default-rtdb.firebaseio.com", // Add your database URL here
+    databaseURL: "https://veexchage-p2-default-rtdb.firebaseio.com/", // Add your database URL here
     projectId: "veexchange-p2",
     storageBucket: "veexchange-p2.appspot.com",
     messagingSenderId: "103489803359",
@@ -16,6 +14,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM fully loaded and parsed");
     const signUpForm = document.getElementById('signUpForm');
     signUpForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -23,17 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-        
+
+        console.log("Form submitted:", { name, email, password });
+
         // Sign up the user with Firebase Authentication
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
+                console.log("User signed up:", userCredential);
                 const user = userCredential.user;
-                
+
                 // Save user details to Firebase Realtime Database
                 firebase.database().ref('users/' + user.uid).set({
                     name: name,
                     email: email
                 }).then(() => {
+                    console.log("User data saved to database");
                     // Redirect to thank you page
                     window.location.href = 'Thanks.html';
                 }).catch((error) => {
