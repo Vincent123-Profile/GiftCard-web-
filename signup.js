@@ -1,14 +1,14 @@
-// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyDx9Q0iWX-EQpyLOA2n5OC2ia4NHT4VcHM",
-    authDomain: "veexchange-p2.firebaseapp.com",
-    databaseURL: "https://veexchage-p2-default-rtdb.firebaseio.com/", // Add your database URL here
-    projectId: "veexchange-p2",
-    storageBucket: "veexchange-p2.appspot.com",
+    authDomain: "veexchage-p2.firebaseapp.com",
+    databaseURL: "https://veexchage-p2-default-rtdb.firebaseio.com",
+    projectId: "veexchage-p2",
+    storageBucket: "veexchage-p2.appspot.com",
     messagingSenderId: "103489803359",
     appId: "1:103489803359:web:37ccc4fb3bd207cbd677ea",
     measurementId: "G-JCNH6ZTQ30"
-};
+  };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
